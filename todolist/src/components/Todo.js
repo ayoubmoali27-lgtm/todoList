@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box';
+
 import Card from '@mui/material/Card';
 import IconButton from '@mui/material/IconButton';
 
@@ -31,7 +31,7 @@ export default function Todo({todo, fun}){
   
   function handlecheckClick(){
     const updatedTodos = todos.map((t)=>{
-          if (t.id == todo.id )
+          if (t.id === todo.id )
           {t.isCompleted=!t.isCompleted}
           return t;
         }) ;
@@ -47,7 +47,7 @@ export default function Todo({todo, fun}){
    function handleDeleteConfirm(){
     const newTo = todos.filter((t)=>{
       
-      return t.id != todo.id
+      return t.id !== todo.id
     })
 
     setTodos(newTo)
@@ -65,7 +65,7 @@ export default function Todo({todo, fun}){
 
    function handleUpdateConfirm(){
     const updatedTodos = todos.map((t)=>{
-      if (t.id == todo.id)
+      if (t.id === todo.id)
       {return {...t, title : updatedTodo.title, details: updatedTodo.details}}
       else{return t}
 

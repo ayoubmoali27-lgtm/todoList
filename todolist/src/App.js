@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import TodoList from './components/TodoList';
 import {createTheme, ThemeProvider} from "@mui/material/styles"

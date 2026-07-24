@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -49,8 +49,8 @@ export default function TodoList() {
   })
 
   let todosToberendered = todos
-  if(displayType=="done"){todosToberendered=completedTodos}
-  else if (displayType=="not-done"){todosToberendered=notCompletedTodos}
+  if(displayType==="done"){todosToberendered=completedTodos}
+  else if (displayType==="not-done"){todosToberendered=notCompletedTodos}
 
   const TodoJs = todosToberendered.map ((t)=> {
     return <Todo todo = {t} key={t.id} />
@@ -58,7 +58,7 @@ export default function TodoList() {
   useEffect(()=>{
     const storageTodos = JSON.parse(localStorage.getItem("todos")) ?? []
     setTodos(storageTodos)
-  },[])
+  },[setTodos])
   return (
       
       <Container maxWidth="sm">
